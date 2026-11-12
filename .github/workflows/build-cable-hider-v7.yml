@@ -1,0 +1,32 @@
+name: Build Cable Hider V7 STL
+
+on:
+  push:
+    paths:
+      - 'Cable Hider 105 Degree/generate_v7.py'
+      - '.github/workflows/build-cable-hider-v7.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Generate V7 STL
+        run: python "Cable Hider 105 Degree/generate_v7.py"
+      - name: Commit generated STL
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "Cable Hider 105 Degree/bend_105_depth_plus_2_v7.stl"
+          if git diff --cached --quiet; then
+            echo "STL already generated"
+          else
+            git commit -m "Add 105-degree cable hider V7 (2mm deeper)"
+            git push
+          fi
