@@ -1,10 +1,12 @@
-# 105° Cable Hider Corner — V5
+# 105° Cable Hider Corner
 
-Printable STL for an inside corner of approximately 105 degrees.
+Printable corner fittings for an inside corner of approximately 105°.
 
-- Arm extended 5 mm compared with V4
-- Rectangular side opening: approximately 17.8 mm long
-- Overall width: approximately 18.1 mm
-- Existing channel and bend retained
+- V6 (latest): Shortened the right arm by 2 mm from V5, leaving the 17.8 mm rectangular opening unchanged.
+- V5: Extended the right arm by 5 mm from V4, retaining the 17.8 mm opening.
+- Overall width: approximately 18.1 mm.
+- 105° bend and cable-channel geometry preserved.
 
-Download `bend_105_extended_arm_v5.stl` to slice in Bambu Studio or another slicer. This is a custom fit-test model; verify it against your cable raceway before printing multiples.
+Download bend_105_extended_arm_v6.stl and slice it in Bambu Studio. Fit-test before printing multiples.
+
+V6 is reproducibly generated from V5 by generate_v6.py and the GitHub Actions workflow.
